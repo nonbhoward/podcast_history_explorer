@@ -1,0 +1,7 @@
+# files
+# .gitignore
+
+# folders
+.idea/
+env/
+
