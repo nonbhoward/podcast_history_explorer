@@ -1,5 +1,5 @@
 # using HOME directory as root path
 # for example :
 #   /home/username/list[0]/list[1]/../list[-1]
-zip file location:
-  [podcast_republic_backup_data]
+file location:
+  [podcast_republic_backups]
