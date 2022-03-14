@@ -34,8 +34,7 @@ assert isinstance(interface_server.server.d, HTTPServer)
 print(f'\tserver daemon is {interface_server.server.d}')
 
 # test #6 : start server
-interface_server.start()
-# TODO check then stop server
+# TODO start, check, then stop server
 
 # tests passed
 print(f'PASSED TEST : {test_name}')

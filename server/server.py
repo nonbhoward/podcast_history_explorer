@@ -61,7 +61,7 @@ class InterfaceServer:
         start the server
         :return:
         """
-        # TODO
+        self.server.d.serve_forever()
 
 
 if __name__ == '__main__':
