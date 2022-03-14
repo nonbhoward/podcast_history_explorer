@@ -5,6 +5,7 @@ import os
 # third party lib imports
 # project imports
 from settings.reader import read_settings
+from server.server import InterfaceServer
 
 # project sketch
 
@@ -22,6 +23,9 @@ app_settings = read_settings(project_root=os.getcwd())
 #       unzip, delete,
 #       sub-file selector, auto identify type
 #         load, view,
+#   launch server
+if_server = InterfaceServer(app_settings=app_settings)
+if_server.start()
 
 # database extras
 #   common-query-by-button
