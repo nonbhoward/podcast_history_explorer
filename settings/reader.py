@@ -25,19 +25,7 @@ def read_settings(project_root=pathlib.Path(os.getcwd()).parent,
     return app_settings
 
 
-def test_settings_reader():
-    name = 'test_settings_reader'
-    """
-    declare path to settings, open in read-mode, load the file, assert
-      loaded file is expected type
-    :return:
-    """
-    print(f'START TEST : {name}')
-    app_settings = read_settings()
-    print(f'\tapp_settings = {app_settings}')
-    assert isinstance(app_settings, dict)
-    print(f'PASSED TEST : {name}')
-
-
 if __name__ == '__main__':
-    test_settings_reader()
+    pass
+else:
+    print(f'importing {__name__}')

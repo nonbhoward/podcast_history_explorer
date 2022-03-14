@@ -5,6 +5,7 @@ import os
 # third party lib imports
 # project imports
 from settings.reader import read_settings
+from server.server import InterfaceServer
 
 # project sketch
 

@@ -1,3 +1,9 @@
 # the project settings file
 data_directory_name:
+  # the name of the folder containing the compressed backup files
   podcast_republic_backups
+
+InterfaceServer:
+  # the https interface server configuration
+  host: ''
+  port: 8080
