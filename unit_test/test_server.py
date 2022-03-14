@@ -1,5 +1,9 @@
 # unittest for server.server
 
+# python imports
+from http.server import HTTPServer
+# third party imports
+# local imports
 from settings.reader import read_settings
 from server.server import InterfaceServer
 server_class_name = 'InterfaceServer'
@@ -21,6 +25,17 @@ print(f'\t{server_class_name} entry stored in class')
 
 # test #3 : ensure server config has required attributes
 required_attributes = ['']
+
+# test #5 : call server, setup, ensure server exists
+assert interface_server.server.d is None
+print(f'\tserver daemon is None')
+interface_server.setup()
+assert isinstance(interface_server.server.d, HTTPServer)
+print(f'\tserver daemon is {interface_server.server.d}')
+
+# test #6 : start server
+interface_server.start()
+# TODO check then stop server
 
 # tests passed
 print(f'PASSED TEST : {test_name}')

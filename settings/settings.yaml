@@ -5,5 +5,5 @@ data_directory_name:
 
 InterfaceServer:
   # the https interface server configuration
-  name: TODO
-  port: TODO
+  host: ''
+  port: 8080
