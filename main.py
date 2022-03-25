@@ -3,12 +3,19 @@
 # python lib imports
 import os
 # third party lib imports
+from flask import Flask
 # project imports
-from server.server import InterfaceServer
+from content.content import start_page
 from settings.reader import read_settings
+app = Flask(__name__)
+
+
+@app.route('/')
+def app_root():
+    return start_page
+
 
 # project sketch
-
 # local init
 #   load settings
 app_settings = read_settings(project_root=os.getcwd())
@@ -19,15 +26,13 @@ app_settings = read_settings(project_root=os.getcwd())
 
 # server launch
 #   setup the server
-if_server = InterfaceServer(app_settings=app_settings)
-if_server.setup()
 #   define interface
 #     radio list selector
 #       unzip, delete,
 #       sub-file selector, auto identify type
 #         load, view,
 #   launch server
-if_server.start()
+app.run(debug=True, host='0.0.0.0')
 
 # database extras
 #   common-query-by-button
