@@ -3,20 +3,20 @@ from content.link import Endpoint
 root = \
     f"""
     root<br>
-    {Endpoint.branch}
-    {Endpoint.hello}
+    {Endpoint.branch}<br>
+    {Endpoint.hello}<br>
     """
 
 branch = \
     f"""
-    {Endpoint.root}
+    {Endpoint.root}<br>
     branch<br>
-    {Endpoint.hello}
+    {Endpoint.hello}<br>
     """
 
 hello = \
     f"""
-    {Endpoint.root}
-    {Endpoint.branch}
+    {Endpoint.root}<br>
+    {Endpoint.branch}<br>
     hello
     """

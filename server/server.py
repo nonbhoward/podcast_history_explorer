@@ -5,6 +5,7 @@ from flask import Flask
 from flask import url_for
 app = Flask(__name__)
 endpoints = ['fl_root', 'fl_branch']
+__all__ = ['fl_root', 'fl_branch', 'fl_hello']
 
 
 @app.route('/')
