@@ -3,16 +3,10 @@
 # python lib imports
 import os
 # third party lib imports
-from flask import Flask
+from server.server import app
 # project imports
-from content.content import start_page
+from settings.reader import read_flask_debug_value_from_
 from settings.reader import read_settings
-app = Flask(__name__)
-
-
-@app.route('/')
-def app_root():
-    return start_page
 
 
 # project sketch
@@ -25,14 +19,16 @@ app_settings = read_settings(project_root=os.getcwd())
 #   read available files into metadata
 
 # server launch
-#   setup the server
+#   fetch server setup
+debug = read_flask_debug_value_from_(app_settings=app_settings)
+#   set up the server
 #   define interface
 #     radio list selector
 #       unzip, delete,
 #       sub-file selector, auto identify type
 #         load, view,
 #   launch server
-app.run(debug=True, host='0.0.0.0')
+app.run(debug=debug, host='0.0.0.0')
 
 # database extras
 #   common-query-by-button
