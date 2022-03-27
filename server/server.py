@@ -1,4 +1,4 @@
-from content.content import branch
+from content.content import site_branch
 from content.content import start_page
 from flask import Flask
 app = Flask(__name__)
@@ -11,4 +11,4 @@ def site_root():
 
 @app.route('/branch')
 def branch():
-    return branch
+    return site_branch
