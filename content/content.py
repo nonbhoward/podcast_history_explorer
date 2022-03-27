@@ -1,8 +1,14 @@
-site_branch = \
+root = \
+    """
+    root
+    """
+
+branch = \
     """
     branch
     """
-start_page = \
+
+hello = \
     """
-    hello world
+    hello
     """

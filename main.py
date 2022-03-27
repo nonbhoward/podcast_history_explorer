@@ -3,8 +3,8 @@
 # python lib imports
 import os
 # third party lib imports
-from server.server import app
 # project imports
+from server.server import app
 from settings.reader import read_flask_key_value_from_
 from settings.reader import read_settings
 

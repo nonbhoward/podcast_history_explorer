@@ -35,7 +35,7 @@ def read_flask_key_value_from_(app_settings: dict, key: str):
     section = 'Flask'
     flask_settings = app_settings[section]
     value = flask_settings.get(key, None)
-    if key is 'host':
+    if key == 'host':
         # reduce access if in debug mode
         debug = flask_settings.get('debug', None)
         value = '' if debug else value
