@@ -3,7 +3,7 @@
 # python imports
 # third party imports
 # local imports
-from settings.reader import read_flask_debug_value_from_
+from settings.reader import read_flask_key_value_from_
 from settings.reader import read_settings
 test_name = 'test_settings_reader'
 
@@ -18,11 +18,16 @@ app_settings = read_settings()
 assert isinstance(app_settings, dict)
 print(f'\tsettings is of dictionary type')
 
-# test #2 : ensure flask debug value is set and can be read
-app_settings = read_settings()
-debug = read_flask_debug_value_from_(app_settings=app_settings)
+# test #2 : ensure flask key values are set and can be read
+key = 'debug'
+debug = read_flask_key_value_from_(app_settings=app_settings, key=key)
 assert isinstance(debug, bool)
-print(f'\tdebug is of bool type')
+print(f'\t{key} is of bool type')
+
+key = 'host'
+host = read_flask_key_value_from_(app_settings=app_settings, key=key)
+assert isinstance(host, str)
+print(f'\t{key} is of str type')
 
 # tests passed
 print(f'PASSED TEST : {test_name}')

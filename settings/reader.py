@@ -25,15 +25,21 @@ def read_settings(project_root=pathlib.Path(os.getcwd()).parent,
     return app_settings
 
 
-def read_flask_debug_value_from_(app_settings: dict) -> bool:
+def read_flask_key_value_from_(app_settings: dict, key: str):
     """
-    hardcode, fetch a value from a section
-    :param app_settings: dictionary containing all app settings
-    :return: Flask debug value
+    fetch a key from a hardcoded section name
+    :param app_settings:
+    :param key:
+    :return:
     """
-    flask_settings = app_settings['Flask']
-    debug = flask_settings.get('debug', None)
-    return debug
+    section = 'Flask'
+    flask_settings = app_settings[section]
+    value = flask_settings.get(key, None)
+    if key == 'host':
+        # reduce access if in debug mode
+        debug = flask_settings.get('debug', None)
+        value = '' if debug else value
+    return value
 
 
 if __name__ == '__main__':
