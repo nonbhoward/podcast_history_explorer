@@ -5,7 +5,7 @@ import os
 # third party lib imports
 from server.server import app
 # project imports
-from settings.reader import read_flask_debug_value_from_
+from settings.reader import read_flask_key_value_from_
 from settings.reader import read_settings
 
 
@@ -20,7 +20,8 @@ app_settings = read_settings(project_root=os.getcwd())
 
 # server launch
 #   fetch server setup
-debug = read_flask_debug_value_from_(app_settings=app_settings)
+debug = read_flask_key_value_from_(app_settings=app_settings, key='debug')
+host = read_flask_key_value_from_(app_settings=app_settings, key='host')
 #   set up the server
 #   define interface
 #     radio list selector
@@ -28,7 +29,7 @@ debug = read_flask_debug_value_from_(app_settings=app_settings)
 #       sub-file selector, auto identify type
 #         load, view,
 #   launch server
-app.run(debug=debug, host='0.0.0.0')
+app.run(debug=debug, host=host)
 
 # database extras
 #   common-query-by-button
