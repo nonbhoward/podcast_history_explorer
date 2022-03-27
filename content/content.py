@@ -1,18 +1,22 @@
-local = '127.0.0.1:5000'
+from content.link import Endpoint
 
 root = \
     f"""
-    root
-    <a href="/branch">branch</a>
+    root<br>
+    {Endpoint.branch}<br>
+    {Endpoint.hello}<br>
     """
 
 branch = \
     f"""
-    branch
-    <a href="/">root</a>
+    {Endpoint.root}<br>
+    branch<br>
+    {Endpoint.hello}<br>
     """
 
 hello = \
     f"""
+    {Endpoint.root}<br>
+    {Endpoint.branch}<br>
     hello
     """
