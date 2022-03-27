@@ -19,7 +19,7 @@ def fl_branch():
 
 @app.route('/hello/<name>')
 def fl_hello(name):
-    return f'{hello} {name}'
+    return f'{hello} {name}<br>'
 
 
 def _print_urls():
