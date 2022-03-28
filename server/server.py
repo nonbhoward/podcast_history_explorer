@@ -1,26 +1,58 @@
-from content.content import branch
-from content.content import hello
-from content.content import root
+from content.link import Endpoint
+from content.style import CSS
 from flask import Flask
 from flask import url_for
 app = Flask(__name__)
 endpoints = ['fl_root', 'fl_branch']
-__all__ = ['fl_root', 'fl_branch', 'fl_hello']
+__all__ = ['fl_root', 'fl_testing']
 
 
 @app.route('/')
 def fl_root():
-    return root
+    """
+    site root
+    :return:
+    """
+    return f"""
+    {CSS.center_below}
+    this is root<br>
+    {CSS.center_above}
+    """
 
 
-@app.route('/branch')
-def fl_branch():
-    return branch
+@app.route('/testing')
+def fl_testing():
+    """
+    testing endpoint
+    :return:
+    """
+    return f"""
+    {CSS.center_below}
+    {Endpoint.root}<br>
+    testing<br>
+    {Endpoint.hello}<br>
+    {CSS.center_above}
+    """
 
 
 @app.route('/hello/<name>')
 def fl_hello(name):
-    return f'{hello} {name}<br>'
+    """
+    testing endpoint
+    :return:
+    """
+    return f"""
+    {CSS.center_below}
+    {Endpoint.root}<br>
+    {Endpoint.branch}<br>
+    hello {name}
+    {CSS.center_above}
+    <br>"""
+
+
+@app.route('/print/path/data')
+def fl_print_path_to_data():
+    pass
 
 
 def _print_urls():
