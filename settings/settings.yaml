@@ -9,3 +9,7 @@ Flask:
   debug: True
   host: 0.0.0.0
   port: 8080
+
+paths:
+  # paths to fetch as part of startup
+  [home, project]

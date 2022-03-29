@@ -36,7 +36,10 @@ def read_flask_key_value_from_(app_settings: dict, key: str):
     flask_settings = app_settings[section]
     value = flask_settings.get(key, None)
     if key == 'host':
-        # reduce access if in debug mode
+        """reduce remote access if running in debug mode. not sure if
+             necessary but would rather be safe than sorry and err on 
+             the side of too much security versus too little
+        """
         debug = flask_settings.get('debug', None)
         value = '' if debug else value
     return value
