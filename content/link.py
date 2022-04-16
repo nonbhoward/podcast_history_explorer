@@ -8,9 +8,6 @@ class Endpoint:
     branch = """
     <a href="/branch">branch</a>
     """
-    hello = """
-    <a href="/hello/soandso">hello</a>
-    """
     all_point_names = ['root',
                        'branch',
                        'hello']

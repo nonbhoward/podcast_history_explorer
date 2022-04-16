@@ -1,7 +1,14 @@
-from content.link import Endpoint
-from content.style import CSS
+# page routing for the flask server
+
+# python lib imports
+import os
+# third party imports
 from flask import Flask
 from flask import url_for
+# project imports
+from content.link import Endpoint
+from content.style import CSS
+
 app = Flask(__name__)
 endpoints = ['fl_root', 'fl_branch']
 __all__ = ['fl_root', 'fl_testing']
@@ -16,6 +23,7 @@ def fl_root():
     return f"""
     {CSS.center_below}
     this is root<br>
+    the cwd is {cwd}<br>
     {CSS.center_above}
     """
 

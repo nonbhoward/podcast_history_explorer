@@ -2,11 +2,13 @@
 
 # python lib imports
 import os
+import pathlib
 # third party lib imports
 # project imports
 from server.server import app
 from settings.reader import read_flask_key_value_from_
 from settings.reader import read_settings
+from utils.sys_info import build_path_to_data
 
 
 # project sketch
@@ -15,6 +17,7 @@ from settings.reader import read_settings
 app_settings = read_settings(project_root=os.getcwd())
 #   configure logging
 #   define data path
+path_to_data = build_path_to_data(app_settings=app_settings)
 #   init available file metadata
 #   read available files into metadata
 
