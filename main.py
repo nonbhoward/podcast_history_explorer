@@ -8,6 +8,7 @@ import pathlib
 from server.server import app
 from settings.reader import read_flask_key_value_from_
 from settings.reader import read_settings
+from utils.sys_info import build_dict_of_backup_files
 from utils.sys_info import build_path_to_data
 
 
@@ -18,7 +19,13 @@ app_settings = read_settings(project_root=os.getcwd())
 #   configure logging
 #   define data path
 path_to_data = build_path_to_data(app_settings=app_settings)
-#   init available file metadata
+#   read files in the data path, sorted by .. name, date?
+backup_files = build_dict_of_backup_files(path_to_data=path_to_data)
+#   get a list of the contents of a zip file?
+#   unzip a file
+#       create a temporary directory for the zip file
+#       unzip the contents into the temporary directory
+
 #   read available files into metadata
 
 # server launch
