@@ -14,11 +14,13 @@ def read_settings(project_root=pathlib.Path(os.getcwd()).parent,
                   filename='settings.yaml') -> dict:
     """
     open settings file in read-mode, load the file
-    :param project_root: name of settings directory
+    :param project_root: parent directory of settings directory
     :param directory: name of settings directory
     :param filename: name of settings file
     :return: dictionary containing settings
     """
+    if not project_root:
+        project_root = pathlib.Path(os.getcwd()).parent
     path_to_settings = pathlib.Path(project_root, directory, filename)
     with open(path_to_settings, 'r') as settings:
         app_settings = yaml.safe_load(settings)

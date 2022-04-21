@@ -1,8 +1,10 @@
 # the project settings file
 
-data_directory_name:
-  # the name of the folder containing the compressed backup files
-  podcast_republic_backups
+
+DataManager:
+  data_directory_name:
+    # the name of the folder containing the compressed backup files
+    podcast_republic_backups
 
 Flask:
   # the https interface server configuration

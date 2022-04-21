@@ -29,8 +29,12 @@ def build_path_to_data(app_settings) -> pathlib.Path:
     :param app_settings: a dictionary containing the app configuration
     :return: a path to the backup files
     """
+    section = 'DataManager'
+    datamanager_section = app_settings.get(section, '')
+    if not datamanager_section:
+        print(f'app_settings missing section: {section}, will now exit')
     key = 'data_directory_name'
-    data_directory_name = app_settings.get(key, '')
+    data_directory_name = datamanager_section.get(key, '')
     if not data_directory_name:
         print(f'app_settings missing key: {key}, will now exit')
         exit()
